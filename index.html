@@ -75,6 +75,26 @@
 <script src="https://unpkg.com/jquery"></script>
 <script>
   // Add your code here!
+  "use strict";
+
+  let randomNum = Math.floor(Math.random() * 100) + 1
+
+  $("img").addClass("image-center")
+
+  $("article p:last-child").remove()
+
+  $("#title").css("fontSize", `${randomNum}px`)
+
+  $("ol").append("<li> something to append to list </li>")
+
+  $("aside").empty().append("<p>Sorry for the exista\ence of the old list </p>")
+
+  $("input").on("change", changeBackground)
+
+  function changeBackground(){
+    let red = $(".mb-5")
+ }
+
 </script>
 </body>
 
