@@ -1,9 +1,10 @@
 //use eventpreventdefault in the event listener
 
-let unorderList = $("ul");
+let $unorderList = $("ul");
 
 $("form").on("submit", getValueAndappendDOM);
 $("ul").on("click", "button", deleteMovie);
+$("#sort").on("click", sortTitleAZ);
 
 function getValueAndappendDOM(evt) {
   evt.preventDefault();
@@ -13,7 +14,9 @@ function getValueAndappendDOM(evt) {
   //build the button -> going to need to use event delegation
   const deleteButton = $("<button>", { text: "Delete" });
 
-  let newLI = $("<li>").text(`Title:${titleText} Rating: ${ratingNum}`);
+  let newLI = $("<li>").html(`<span id="title" value="${titleText}">
+  Title:${titleText} </span><span id="rating" value="ratingNum">Rating: 
+  ${ratingNum}</span>`);
   newLI.append(deleteButton);
 
   unorderList.append(newLI);
@@ -23,6 +26,12 @@ function deleteMovie(evt) {
   let movieToDelete = $(evt.currentTarget.parentElement);
 
   movieToDelete.remove();
+}
+
+function sortTitleAZ(){
+    let title = $unorderList.children().children()
+
+    console.log(Array.from(unorderList.children()))
 }
 
 //sorting
