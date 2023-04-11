@@ -109,8 +109,8 @@
      * no arguments, no return value
      * removes an image when clicked
     */
-    function removeImage() {
-      this.remove();
+    function removeImage(evt) {
+      $(evt.target).remove();
     }
 
   </script>
